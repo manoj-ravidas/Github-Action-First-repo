@@ -1,7 +1,22 @@
 # This is for introduction name of the yml file 
 name: Introduction of github axction workflows
+
+# runs on truiger 
+on:
+ push:
+  branches: [main]
 # There are the jobs 
 jobs:
+# THis is the name od the job 
    greet:
+   # This is Github Runners 
+      runs-on: ubuntu-latest
+      steps:
+      - name: say hello to the users 
+        run: echo "hello dosto"
+
+    steps: 
+      - name: say hello to username
+       run: echo "Hello $USER"
    
 
