@@ -16,3 +16,10 @@ jobs:
 
       - name: Print System User
         run: echo "Runner user is $USER"
+
+  details:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show versions of Docker and Python
+        run: docker --version && python --version
