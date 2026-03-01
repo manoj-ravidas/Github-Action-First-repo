@@ -1,22 +1,23 @@
-# This is for introduction name of the yml file 
-name: Introduction of github axction workflows
+# This is the name of the workflow
+name: Introduction of GitHub Action Workflows
 
-# runs on truiger 
+# Trigger: When code is pushed to main branch
 on:
- push:
-  branches: [main]
-# There are the jobs 
+  push:
+    branches:
+      - main
+
+# Jobs section
 jobs:
-# THis is the name od the job 
-   greet:
-   # This is Github Runners 
-      runs-on: ubuntu-latest
-      steps:
-      - name: say hello to the users 
-        run: echo "hello dosto"
+  # Job name
+  greet:
+    # GitHub Runner
+    runs-on: ubuntu-latest
 
-    steps: 
-      - name: say hello to username
-       run: echo "Hello $USER"
-   
+    # Steps inside the job
+    steps:
+      - name: Say hello to users
+        run: echo "Hello Dosto"
 
+      - name: Say hello to username
+        run: echo "Hello $USER"
