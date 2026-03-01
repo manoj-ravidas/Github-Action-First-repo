@@ -1,23 +1,18 @@
-# This is the name of the workflow
 name: Introduction of GitHub Action Workflows
 
-# Trigger: When code is pushed to main branch
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
-# Jobs section
 jobs:
-  # Job name
   greet:
-    # GitHub Runner
     runs-on: ubuntu-latest
 
-    # Steps inside the job
     steps:
-      - name: Say hello to users
-        run: echo "Hello Dosto"
+      - name: Print GitHub Actor
+        run: echo "Triggered by ${{ github.actor }}"
 
-      - name: Say hello to username
-        run: echo "Hello $USER"
+      - name: Print System User
+        run: echo "Runner user is $USER"
