@@ -1,1 +1,36 @@
+name: CICD Pipeline
 
+on:
+  workflow_dispatch:
+
+jobs:
+
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Clone Confirmation
+        run: echo "Code cloned successfully"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: code
+    steps:
+      - name: Build Docker Container
+        run: echo "Building Docker container..."
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test Container
+        run: echo "Testing Docker container..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy Application
+        run: echo "Docker container deployed successfully"
